@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard 9</title>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-9" fill-rule="nonzero">
+            <g id="Group-Copy-6" transform="translate(11.000000, 11.000000) rotate(-180.000000) translate(-11.000000, -11.000000) translate(7.000000, 5.000000)">
+                <polygon id="Shape" fill="#3BB6A3" transform="translate(3.933203, 2.401164) rotate(-180.000000) translate(-3.933203, -2.401164) " points="0.211035156 0.526164499 3.93320312 4.2761645 7.65537109 0.526164499"></polygon>
+                <polygon id="Shape" fill="#BABABA" points="0.211035156 7.5 3.93320312 11.25 7.65537109 7.5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

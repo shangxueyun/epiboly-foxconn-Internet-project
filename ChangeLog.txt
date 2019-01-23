@@ -1,0 +1,1603 @@
+--------------------------------------------------------------------------------------------
+2018/07/06 Dave_shang  [GUI]
+--------------------------------------------------------------------------------------------
+1.alarm pop-up map click get ID detailed address
+M   src/components/ruleEngine.vue
+A   src/html/MapFunc.html
+
+--------------------------------------------------------------------------------------------
+2018/07/05 Dave_shang  [GUI]
+--------------------------------------------------------------------------------------------
+Add alarm pop-up dialog.
+M   src/components/ruleEngine.vue
+
+--------------------------------------------------------------------------------------------
+2018/07/05 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Change 'add.svg' icon to icomoon-icon.
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_icomoon_selection.json
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+M   src/components/common/search-bar.vue
+
+--------------------------------------------------------------------------------------------
+2018/07/05 Eason  [GUI]
+--------------------------------------------------------------------------------------------
+1. add analysis's vue.
+2. update the ruleEngine's css.
+@TODO: change 'add.svg' icon to icomoon-icon.
+M   src/Main.vue
+M   src/components/common/search-bar.vue
+M   src/components/ruleEngine.vue
+M   src/router/index.js
+A	src/components/AIEngine.vue
+A	src/components/analysis.vue
+A	src/components/analysisModel.vue
+A	src/components/analysisReport.vue
+A	src/components/analysisTrain.vue
+A	src/components/machineLearning.vue
+
+--------------------------------------------------------------------------------------------
+2018/07/05 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add baidu map.
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+M   src/components/alarmInfo.vue
+M   src/html/NavVis.html
+A   src/assets/scss/baidu/*
+A   src/html/baiduMap.html
+A   static/css/baidumap.css
+
+--------------------------------------------------------------------------------------------
+2018/07/02 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. Remove size limit of font. (eot, ttf, otf, woff,...)
+M   build/webpack.base.conf.js
+2. Fix vue warning when router link direct to undefined path.
+M   src/components/common/table-device-info.vue
+
+--------------------------------------------------------------------------------------------
+2018/07/02 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+[Dave_shang]
+Fix chart-downloaded bug.
+M   src/components/dataIncrementOverview.vue
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/29 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add icon and change footer color.
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_icomoon_selection.json
+M   src/components/alarmInfo.vue
+M   src/components/common/table-device-info.vue
+M   src/components/deviceInfo.vue
+M   src/components/ruleEngine.vue
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+D   static/img/ic-option.svg
+
+--------------------------------------------------------------------------------------------
+2018/06/29 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Implement history log.
+Implement rule engine.
+M   src/Main.vue
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/common/table-device-info.vue
+M   src/components/dataIncrement.vue
+M   src/components/deviceInfo.vue
+M   src/components/insight.vue
+M   src/components/summary.vue
+M   src/router/index.js
+A   src/assets/js/utility.js
+A   src/components/ruleEngine.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/28 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Change page navigation style.
+M   src/assets/scss/style.scss
+M   src/components/deviceInfo.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/27 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+[Dave_shang]
+1. Change download icon of all charts and add download function
+M   src/components/dataIncrementOverview.vue
+M   src/components/summary.vue
+M   src/assets/js/chartOptions.js
+A   static/img/download.svg
+
+--------------------------------------------------------------------------------------------
+2018/06/27 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Remove safety page.
+M   src/Main.vue
+M   src/router/index.js
+
+--------------------------------------------------------------------------------------------
+2018/06/27 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Change words.
+M   src/Main.vue
+M   src/components/MapIndex.vue
+M   src/html/NavVis.html
+A   .postcssrc.js
+
+--------------------------------------------------------------------------------------------
+2018/06/26 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add icon color, tooltip, and sorting arrows.
+M   src/assets/scss/style.scss
+M   src/components/common/table-device-info.vue
+A   static/img/ic-arrow-down.svg
+A   static/img/ic-arrow-up.sv
+
+--------------------------------------------------------------------------------------------
+2018/06/25 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. Remove .svg file size limit.
+M   build/webpack.base.conf.js
+2. Change layout and add icons.
+M   src/assets/scss/style.scss
+M   src/components/common/table-device-info.vue
+M   src/components/deviceInfo.vue
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_icomoon_selection.json
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+
+--------------------------------------------------------------------------------------------
+2018/06/25 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+[Dave_shang]
+Change date-picker border color.
+M   src/components/dataIncrementOverview.vue
+M   src/components/summary.vue
+M   src/assets/js/chartOptions.js
+M   static/img/backgroundBar.svg
+
+--------------------------------------------------------------------------------------------
+2018/06/22 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+[Dave_shang]
+1. Overview - data components: Change bar color.
+2. Overview - data components: Change the background color of tabs.
+3. Add scrollbar of dataIncrement -> data component -> data size.
+4. Fix layout to be fit on 1440 DPI.
+M   src/assets/js/chartOptions.js
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/dataIncrementOverview.vue
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/22 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. Add sass-rem module and responsive design.
+M   package.json
+M   src/Main.vue
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/dataIncrementOverview.vue
+M   src/components/deviceInfo.vue
+2. Change icons.
+A   static/img/ic-sensor-anchor.svg
+A   static/img/ic-sensor-door.svg
+A   static/img/ic-sensor-infrared.svg
+A   static/img/ic-sensor-manhole.svg
+A   static/img/ic-sensor-movement.svg
+A   static/img/ic-sensor-nh3.svg
+A   static/img/ic-sensor-noise.svg
+A   static/img/ic-sensor-parking.svg
+A   static/img/ic-sensor-smoke.svg
+A   static/img/ic-sensor-wateroffer.svg
+A   static/img/ic-sensor-waterpressure.svg
+D   static/img/ic-sensor-equipmentbox.svg
+D   static/img/ic-sensor-exit.svg
+D   static/img/ic-sensor-extinguisher.svg
+D   static/img/ic-sensor-firebell.svg
+D   static/img/ic-sensor-flowindicator.svg
+M   static/img/ic-sensor-hydrant.svg
+D   static/img/ic-sensor-indicator.svg
+D   static/img/ic-sensor-light.svg
+D   static/img/ic-sensor-transformer.svg
+3. Fix download bug.
+A   static/img/backgroundBar.svg
+
+--------------------------------------------------------------------------------------------
+2018/06/21 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+[Dave_shang]
+1. Change every eChart tooltip background color to white.
+2. dataSummary -> data comparison chart:
+   Change data point to solid circle.
+3. dataSummary -> data component chart: 
+   Change label position.
+4. dataIncrement -> data component chart:
+    Fix the problem that gradient color of webpage cannot be downloaded.
+    Increment the button width to fix the cutting-off problem at 1440 * 900 resolution
+    Change label position.
+    Move button to fix its wrong position at 1440 * 900 resolution
+5. dataIncrement -> data comparison chart:
+    Adjust eChart label position.
+    Change date-picker position.
+6. dataSummary -> data comparison and incremental data -> data comparison: 
+   Fix x-axis name wrong display problem.
+
+[Eason]
+1.update the eChart's tooltips' style and eChart's symbol style.
+
+M   src/components/dataIncrementOverview.vue
+M   src/assets/js/chartOptions.js
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/21 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add scrollbar in chart.
+Add clicked background-color of menu.
+M   src/Main.vue
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/dataIncrementOverview.vue
+M   src/components/insight.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/20 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+[Dave_shang]
+1. Add data components and data comparisons
+2. It solves the problem of data exchange between data volume data and data composition bar graph
+3. Resolved the data source's alternate font color
+BUG: Scroll to failure
+[Eason]
+1. make the sum of data html and complate the screenshot function
+2. make the data growing
+3. fix the button's color in highlight.
+
+M   src/components/dataIncrement.vue
+M   src/assets/scss/style.scss
+M   src/assets/js/chartOptions.js
+M   src/components/summary.vue
+A   src/assets/js/jquery-3.3.1.min.js
+A   src/assets/js/html2canvas.js
+
+--------------------------------------------------------------------------------------------
+2018/06/20 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add the 3rd-level path of vue-router.
+M   src/Main.vue
+M   src/assets/scss/style.scss
+M   src/components/dataIncrement.vue
+M   src/components/insight.vue
+M   src/router/index.js
+renamed:    src/components/dataIncrement.vue -> src/components/dataIncrementOverview.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/20 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add scrollbar.
+M   src/components/deviceInfo.vue
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/20 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add deviceInfo page.
+M   src/Main.vue
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_icomoon_selection.json
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/router/index.js
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+A   src/components/deviceInfo.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/19 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. Add some text in Main.vue component.
+M   src/Main.vue
+M   src/assets/scss/style.scss
+M   src/components/dataIncrement.vue
+M   src/components/safety.vue
+M   src/router/index.js
+2. Add icons.
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_icomoon_selection.json
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+
+--------------------------------------------------------------------------------------------
+2018/06/19 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Fix logic error of datepicker selecting functions.
+M   src/assets/js/chartOptions.js
+M   src/components/dataIncrement.vue
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/14 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add dataIncrement page.
+M   src/Main.vue
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/summary.vue
+M   src/router/index.js
+A   src/components/common/toolbox-download.vue
+A   src/components/dataIncrement.vue
+A   
+--------------------------------------------------------------------------------------------
+2018/06/14 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+[XueYun] Add datepicker functions.
+M   src/assets/js/chartOptions.js
+M   src/assets/scss/style.scss
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/14 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Change ivu-btn border-color and background-color.
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+
+--------------------------------------------------------------------------------------------
+2018/06/13 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add eChart resize function and resize layout.
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/summary.vue
+Add download icon.
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_icomoon_selection.json
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+
+--------------------------------------------------------------------------------------------
+2018/06/12 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+[Eason] Change line color.
+[XueYun] Fix buttons' behavior of data-comparison block.
+M   src/assets/js/chartOptions.js
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/12 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Fix buttons' behavior of data-increment block.
+Remove font-family of header (h1, h2, ..., h6) tags.
+M   src/assets/js/chartOptions.js
+M   src/assets/scss/style.scss
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/11 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. [XueYun] Add buttons function data-comparison chart.
+M   src/assets/js/chartOptions.js
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/11 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. [Eason] Add data-increasing chart.
+2. [XueYun] Add data-comparison, and data-component charts.
+3. Add moment module.
+M   package.json
+M   src/app.js
+M   src/assets/js/chartOptions.js
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/summary.vue
+
+--------------------------------------------------------------------------------------------
+2018/06/08 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. Add vue-perfect-scrollbar module.
+2. Add icons.
+M   package.json
+M   src/Main.vue
+M   src/assets/js/chartOptions.js
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/summary.vue
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+M   src/assets/scss/_icomoon_selection.json
+
+--------------------------------------------------------------------------------------------
+2018/06/06 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add 'Insight' page.
+Add eChart plugin.
+M   build/webpack.base.conf.js
+M   package.json
+M   src/Main.vue
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/router/index.js
+A   src/assets/js/*
+A   src/components/insight.vue
+A   src/components/summary.vue
+renamed:    src/main.js -> src/app.js
+
+--------------------------------------------------------------------------------------------
+2018/05/22 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Add bread crumb.
+M   build/webpack.base.conf.js
+M   package.json
+M   src/assets/scss/style.scss
+M   src/components/alarm.vue
+M   src/components/alarmInfo.vue
+M   src/components/common/search-bar.vue
+M   src/components/common/table-device-info.vue
+M   src/components/fire.vue
+M   src/components/safety.vue
+A   static/img/ic-location.svg
+A   static/img/ic-option.svg
+
+--------------------------------------------------------------------------------------------
+2018/05/22 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Modify select menu style to iview form. 
+M   src/assets/scss/style.scss
+M   src/components/alarmInfo.vue
+M   src/components/common/search-bar.vue
+M   src/components/common/table-device-info.vue
+M   src/components/fire.vue
+D   static/img/ic-sensor-equipmentbox-hover.svg
+D   static/img/ic-sensor-exit-hover.svg
+D   static/img/ic-sensor-extinguisher-hover.svg
+D   static/img/ic-sensor-firebell-hover.svg
+D   static/img/ic-sensor-flowindicator-hover.svg
+D   static/img/ic-sensor-hydrant-hover.svg
+D   static/img/ic-sensor-indicator-hover.svg
+D   static/img/ic-sensor-light-hover.svg
+D   static/img/ic-sensor-transformer-hover.svg
+
+--------------------------------------------------------------------------------------------
+2018/05/21 Baverly  [GUI]
+--------------------------------------------------------------------------------------------
+1. Implement add alarm remainder (time remainder is not done yet).
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_icomoon_selection.json
+M   src/assets/scss/iview-custom.less
+M   src/assets/scss/style.scss
+M   src/components/alarmInfo.vue
+M   static/css/navvis.css
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+
+--------------------------------------------------------------------------------------------
+2018/05/17 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+Create alarmInfo component.
+M   src/Main.vue
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_icomoon_selection.json
+M   src/assets/scss/style.scss
+M   src/components/common/search-bar.vue
+M   src/components/common/table-device-info.vue
+M   src/components/fire.vue
+M   src/router/index.js
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+D   src/components/HelloWorld.vue
+A   src/components/alarm.vue
+A   src/components/alarmInfo.vue
+A   src/components/safety.vue
+
+--------------------------------------------------------------------------------------------
+2018/05/15 Baverly  [GUI]
+--------------------------------------------------------------------------------------------
+1. Add icomoon selection.json for record.
+A   src/assets/scss/_icomoon_selection.json
+
+--------------------------------------------------------------------------------------------
+2018/05/15 Baverly  [GUI]
+--------------------------------------------------------------------------------------------
+1. Add aside menu collapse / expand function.
+2. Change the menu icon to use icomoon font instead of svg image.
+M   src/Main.vue
+M   src/assets/scss/_icomoon.scss
+M   src/assets/scss/_variables.scss
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+M   src/components/common/search-bar.vue
+M   src/components/fire.vue
+M   src/router/index.js
+M   static/css/navvis.css
+M   static/fonts/icomoon.eot
+M   static/fonts/icomoon.svg
+M   static/fonts/icomoon.ttf
+M   static/fonts/icomoon.woff
+
+--------------------------------------------------------------------------------------------
+2018/05/15 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. Create device table.
+2. Add icon in search-bar.
+M   src/Main.vue
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+M   src/components/common/search-bar.vue
+M   src/components/fire.vue
+A   src/components/common/table-device-info.vue
+A   static/img/ic-search.svg
+A   static/img/ic-sensor-equipmentbox-sm.svg
+A   static/img/ic-sensor-exit-sm.svg
+A   static/img/ic-sensor-extinguisher-sm.svg
+A   static/img/ic-sensor-firebell-sm.svg
+A   static/img/ic-sensor-flowindicator-sm.svg
+A   static/img/ic-sensor-hydrant-sm.svg
+A   static/img/ic-sensor-indicator-sm.svg
+A   static/img/ic-sensor-light-sm.svg
+A   static/img/ic-sensor-transformer-sm.svg
+
+--------------------------------------------------------------------------------------------
+2018/05/14 Baverly  [GUI]
+--------------------------------------------------------------------------------------------
+1. Change the icon image to use font in NavVis related page.
+2. Expand/fold the poi type group when click on the arrow.
+M   index.html
+M   src/assets/scss/navvis/navvis.scss
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+M   src/html/NavVis.html
+M   static/css/navvis.css
+M   static/template/NavVis-devList.html
+A   src/assets/scss/_icomoon.scss
+A   static/fonts/icomoon.eot
+A   static/fonts/icomoon.svg
+A   static/fonts/icomoon.ttf
+A   static/fonts/icomoon.woff
+D   static/img/ic-menu-active-focus.svg
+D   static/img/ic-menu-active.svg
+D   static/img/ic-menu-hover.svg
+D   static/img/ic-menu.svg
+D   static/img/ic-pointer.svg
+
+--------------------------------------------------------------------------------------------
+2018/05/14 Lucy  [GUI]
+--------------------------------------------------------------------------------------------
+1. Correct assetsPublicPath.
+M   config/index.js
+2. Change background waving effect to 2-layer.
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+M   static/img/ic-home.svg
+M   static/img/ic-safety.svg
+A   static/img/ic-fire.svg
+A   static/img/ic-sensor-equipmentbox-hover.svg
+A   static/img/ic-sensor-exit-hover.svg
+A   static/img/ic-sensor-extinguisher-hover.svg
+A   static/img/ic-sensor-firebell-hover.svg
+A   static/img/ic-sensor-flowindicator-hover.svg
+A   static/img/ic-sensor-hydrant-hover.svg
+A   static/img/ic-sensor-indicator-hover.svg
+A   static/img/ic-sensor-light-hover.svg
+A   static/img/ic-sensor-transformer-hover.svg
+A   static/img/wave_b.svg
+A   static/img/wave_f.svg
+renamed:    src/assets/scss/variables.scss -> src/assets/scss/_variables.scss
+
+--------------------------------------------------------------------------------------------
+2018/05/14 Baverly  [GUI]
+--------------------------------------------------------------------------------------------
+1. Add device list on navVis map.
+   Click on the row of the device list, map will move to the position of the device, and open the information panel.
+M   src/assets/scss/navvis/navvis.scss
+M   src/html/NavVis.html
+M   static/css/navvis.css
+A   static/css/jquery.mCustomScrollbar.css
+A   static/css/jquery.mCustomScrollbar.min.css
+A   static/img/ic-menu-active-focus.svg
+A   static/img/ic-menu-active.svg
+A   static/img/ic-menu-hover.svg
+A   static/img/ic-menu.svg
+A   static/js/jquery.mCustomScrollbar.concat.min.js
+A   static/js/jquery.mCustomScrollbar.js
+A   static/template/NavVis-devList.html
+
+-----------------------------------------------------------------------------------
+2018/05/11 Lucy [GUI]
+-----------------------------------------------------------------------------------
+Background waving effect.
+M   src/Main.vue
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+M   src/components/fire.vue
+M   src/router/index.js
+M   static/img/frame-1.svg
+M   static/img/frame-2.svg
+M   static/img/frame-3.svg
+A   src/components/common/*
+A   static/img/ic-dev-list.svg
+A   static/img/wave.svg
+
+-----------------------------------------------------------------------------------
+2018/05/10 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. To avoid unloading issue, change NavVis map to use pure HTML instead of vue.
+M   build/webpack.dev.conf.js
+M   build/webpack.prod.conf.js
+M   index.html
+M   package.json
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+M   src/main.js
+A   src/assets/scss/navvis/navvis.scss
+A   src/html/NavVis.html
+A   static/css/*
+A   static/js/*
+D   src/assets/scss/navvis.scss
+D   src/components/NavVis.vue
+D   src/html/test.html
+
+-----------------------------------------------------------------------------------
+2018/05/10 Lucy [GUI]
+-----------------------------------------------------------------------------------
+Fix iframe imported in vue component issue.
+@TODO: file under 'html' folder should be replaced.
+M   build/vue-loader.conf.js
+M   build/webpack.base.conf.js
+M   src/Main.vue
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+M   src/components/fire.vue
+M   src/router/index.js
+A   src/assets/scss/variables.scss
+A   src/html/*
+
+-----------------------------------------------------------------------------------
+2018/05/09 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Create vue-router of fire page.
+2. Create fire component.
+M   src/Login.vue
+M   src/Main.vue
+M   src/assets/scss/style.scss
+M   src/router/index.js
+A   src/components/fire.vue
+A   static/img/ic-safety.svg
+A   static/img/ic-sensor-equipmentbox.svg
+A   static/img/ic-sensor-exit.svg
+A   static/img/ic-sensor-extinguisher.svg
+A   static/img/ic-sensor-firebell.svg
+A   static/img/ic-sensor-flowindicator.svg
+A   static/img/ic-sensor-hydrant.svg
+A   static/img/ic-sensor-indicator.svg
+A   static/img/ic-sensor-light.svg
+A   static/img/ic-sensor-transformer.svg
+
+-----------------------------------------------------------------------------------
+2018/05/09 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Hide the mini-map and all POIs but scan_place (POI type id: 33) in the beginning.
+   And show them after switching to panorama scene.
+M   src/assets/scss/navvis.scss
+M   src/components/NavVis.vue
+
+-----------------------------------------------------------------------------------
+2018/05/08 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Add swap 2D/3D button on map.
+M   build/webpack.base.conf.js
+M   package.json
+M   src/assets/scss/navvis.scss
+M   src/assets/scss/style.scss
+M   src/components/NavVis.vue
+M   src/main.js
+A   src/assets/scss/iview-custom.less
+renamed:
+    src/assets/scss/ivu-select.scss -> src/assets/scss/iview-select.scss
+
+-----------------------------------------------------------------------------------
+2018/05/08 Lucy [GUI]
+-----------------------------------------------------------------------------------
+NavVis text/css style changes other styles we defined; To prevent this, we write global style in index.html.
+M   index.html
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+
+-----------------------------------------------------------------------------------
+2018/05/07 Lucy [GUI]
+-----------------------------------------------------------------------------------
+Main page layout.
+@TODO: Put hamburger.svg
+M   src/Main.vue
+M   src/assets/scss/style.scss
+M   static/img/ic-home.svg
+A   static/img/ic-alarm.svg
+A   static/img/ic-dropdown.svg
+A   static/img/ic-hamburger.svg
+
+-----------------------------------------------------------------------------------
+2018/05/07 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Change the information of building/floor to read from API (site_model).
+M   build/webpack.dev.conf.js
+M   build/webpack.prod.conf.js
+M   package.json
+M   src/assets/scss/navvis.scss
+M   src/components/NavVis.vue
+M   src/main.js
+
+-----------------------------------------------------------------------------------
+2018/05/04 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Add navVis 3d map.
+M   package.json
+M   src/assets/scss/navvis.scss
+M   src/assets/scss/style.scss
+M   src/main.js
+M   src/router/index.js
+A   src/assets/scss/_functions.scss
+A   src/assets/scss/_mixin.scss
+A   src/assets/scss/ivu-select.scss
+A   src/components/NavVis.vue
+D   src/components/navVis.vue
+D   static/css/bootstrap.css
+D   static/css/bootstrap.css.map
+D   static/css/bootstrap.min.css
+D   static/css/bootstrap.min.css.map
+D   static/css/select2.css
+D   static/css/select2.min.css
+D   static/js/bootstrap.js
+D   static/js/bootstrap.js.map
+D   static/js/bootstrap.min.js
+D   static/js/bootstrap.min.js.map
+D   static/js/jquery-3.3.1.js
+D   static/js/jquery-3.3.1.min.js
+D   static/js/jquery-3.3.1.min.map
+D   static/js/select2.full.js
+D   static/js/select2.full.min.js
+D   static/js/select2.js
+D   static/js/select2.min.js
+D   static/navVis.html
+D   static/navvis.css
+
+-----------------------------------------------------------------------------------
+2018/05/04 Lucy [GUI]
+-----------------------------------------------------------------------------------
+Add style.
+M   src/Main.vue
+M   src/assets/scss/style.scss
+M   src/components/MapIndex.vue
+A   static/img/fii-icon.svg
+A   static/img/frame-1.svg
+A   static/img/frame-2.svg
+A   static/img/frame-3.svg
+A   static/img/ic-home.svg
+
+-----------------------------------------------------------------------------------
+2018/05/04 Lucy [GUI]
+-----------------------------------------------------------------------------------
+Use router-vue to replace the navVis iframe.
+Given a new vue framework by webpack and vue-cli.
+M *
+
+-----------------------------------------------------------------------------------
+2018/05/02 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Implement index page.
+A   src/assets/images/bg_green.svg
+A   src/assets/images/bg_pink.svg
+A   src/assets/images/bg_purple.svg
+A   src/assets/images/ic_alert.svg
+D   src/assets/images/bg_green.png
+D   src/assets/images/bg_pink.png
+D   src/assets/images/bg_purple.png
+M   src/assets/images/ic_account.svg
+D   src/assets/images/ic_biolanguage.svg
+D   src/assets/images/ic_question.svg
+M   src/assets/scss/basic.scss
+M   src/assets/scss/chart.scss
+M   src/assets/scss/index.scss
+M   src/assets/scss/layout.scss
+M   src/assets/scss/layout_child.scss
+M   src/assets/scss/login.scss
+M   src/assets/scss/scrollbar.scss
+M   src/components/Home.vue
+M   src/components/index.vue
+M   src/router/index.js
+
+-----------------------------------------------------------------------------------
+2018/05/02 Lucy [GUI]
+-----------------------------------------------------------------------------------
+* Create a new branch for 'factory-brain' GUI from the following commit code.
+  - commit 30330fc695888fb6147328f7a292276794f2d9db
+* Use the following command to push to remotes/origin/factory branch.
+  - $ git push origin factory
+M   ChangeLog.txt
+
+-----------------------------------------------------------------------------------
+2018/04/20 Lucy [GUI]
+-----------------------------------------------------------------------------------
+Create device adding modal.
+M   src/api/sensor_other.js
+M   src/assets/scss/layout_child.scss
+M   src/components/sensors/search.vue
+
+-----------------------------------------------------------------------------------
+2018/04/18 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Add 'My Preference' in search component.
+M   src/api/sensor_lora.js
+M   src/assets/scss/basic.scss
+M   src/assets/scss/layout_child.scss
+M   src/components/sensors/search.vue
+A   src/assets/images/ic_add.svg
+A   src/assets/images/ic_down_arrow.svg
+
+-----------------------------------------------------------------------------------
+2018/03/01 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Seperate baseUrl of development/production modes.
+   @TODO: __API__ of development config now is hardcore and should be changed to its own server.
+M   build/webpack.dev.conf.js
+M   build/webpack.prod.conf.js
+M   src/main.js
+2. Modify size limit of static files. (Only impacts production mode.)
+M   src/assets/images/logo_aires.svg
+M   build/webpack.base.conf.js
+
+-----------------------------------------------------------------------------------
+2018/02/23 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Fix .chartBox style.
+M   src/assets/scss/basic.scss
+
+-----------------------------------------------------------------------------------
+2018/02/23 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Add token.
+M   src/components/Home.vue
+M   src/components/pubSafety/elevator.vue
+M   src/components/pubSafety/fire.vue
+M   src/components/pubSafety/gas.vue
+M   src/components/pubSafety/security.vue
+
+-----------------------------------------------------------------------------------
+2018/02/09 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Correct unit in log fields in device list page.
+2. Add 'moment-duration-format' support for duration display.
+M   package.json
+M   src/api/sensor_type_status.js
+M   src/assets/css/style.css
+M   src/components/mixin/coordConvert.js
+M   src/components/sections/logDataTable.vue
+M   src/components/sensors/devenv.vue
+M   src/components/sensors/door.vue
+M   src/components/sensors/elevator.vue
+M   src/components/sensors/elevator2.vue
+M   src/components/sensors/gas.vue
+M   src/components/sensors/hydrant.vue
+M   src/components/sensors/infrared.vue
+M   src/components/sensors/manhole.vue
+M   src/components/sensors/manhole2.vue
+M   src/components/sensors/move.vue
+M   src/components/sensors/parkingF.vue
+M   src/components/sensors/parkingR.vue
+M   src/components/sensors/police.vue
+M   src/components/sensors/secondary.vue
+M   src/components/sensors/smoke.vue
+M   src/components/sensors/smoke2.vue
+M   src/components/sensors/temp.vue
+M   src/components/sensors/toilet.vue
+M   src/components/sensors/tracker.vue
+M   src/components/sensors/watermeter.vue
+
+-----------------------------------------------------------------------------------
+2018/02/08 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Add chart title and loading style.
+M   src/assets/scss/basic.scss
+M   src/components/pubManag/env.vue
+M   src/components/pubManag/leakage.vue
+M   src/components/pubManag/river.vue
+M   src/components/pubManag/traffic.vue
+M   src/components/pubSafety/elevator.vue
+M   src/components/pubSafety/fire.vue
+M   src/components/pubSafety/gas.vue
+M   src/components/pubSafety/security.vue
+M   src/components/pubService/noise.vue
+M   src/components/pubService/restroom.vue
+M   src/components/pubService/trashcan.vue
+
+-----------------------------------------------------------------------------------
+2018/02/02 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Fix login issue: An user could not login if its account name is null.
+M   src/store/modules/login.js
+2. Set default font family for chart and adjust bar chart style.
+M   src/assets/js/chartOptions.js
+M   src/components/Home.vue
+M   src/components/pubSafety/fire.vue
+M   src/components/sections/barChart.vue
+M   src/main.js
+
+-----------------------------------------------------------------------------------
+2018/02/02 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Add unit on the table header for device list and popup info window in map.
+2. Change the map icon of manhole2 to be same as manhole.
+M   src/assets/images/map_sensors_manhole2.svg
+M   src/components/sections/logDataTable.vue
+M   src/components/sensors/anchor.vue
+M   src/components/sensors/door.vue
+M   src/components/sensors/elevator.vue
+M   src/components/sensors/toilet.vue
+
+-----------------------------------------------------------------------------------
+2018/02/02 Ingird [GUI]
+-----------------------------------------------------------------------------------
+1.Modify sensor search page .
+2.Remove API URL(5438).
+M  src/assets/scss/layout_child.scss
+M  src/components/sensors/gas.vue
+M  src/components/sensors/hydrant.vue
+M  src/components/sensors/police.vue
+M  src/components/sensors/search.vue
+M  src/store/modules/login.js
+
+-----------------------------------------------------------------------------------
+2018/02/01 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Add log display in sensor map popup info window.
+2. Fix map center is incorrect after searching devices.
+3. Add loading circle in map component.
+M   src/api/sensor_type_status.js
+M   src/assets/scss/layout_child.scss
+M   src/components/sections/baiduMap.vue
+M   src/components/sections/baiduMap_singleDev.vue
+M   src/components/sensors/anchor.vue
+M   src/components/sensors/devenv.vue
+M   src/components/sensors/door.vue
+M   src/components/sensors/elevator.vue
+M   src/components/sensors/elevator2.vue
+M   src/components/sensors/gas.vue
+M   src/components/sensors/hydrant.vue
+M   src/components/sensors/infrared.vue
+M   src/components/sensors/manhole.vue
+M   src/components/sensors/manhole2.vue
+M   src/components/sensors/move.vue
+M   src/components/sensors/parkingF.vue
+M   src/components/sensors/parkingR.vue
+M   src/components/sensors/police.vue
+M   src/components/sensors/secondary.vue
+M   src/components/sensors/smoke.vue
+M   src/components/sensors/smoke2.vue
+M   src/components/sensors/temp.vue
+M   src/components/sensors/toilet.vue
+M   src/components/sensors/tracker.vue
+M   src/components/sensors/watermeter.vue
+
+-----------------------------------------------------------------------------------
+2018/02/01 Ingrid [GUI]
+-----------------------------------------------------------------------------------
+1.Fixed bugs for menu icon display.(Modified to Icon Font) 
+    M  src/components/index.vue
+    M  src/assets/scss/index.scss
+    A  src/assets/css/style.css
+    A  src/assets/fonts/icomoon.eot
+    A  src/assets/fonts/icomoon.svg
+    A  src/assets/fonts/icomoon.ttf
+    A  src/assets/fonts/icomoon.woff
+2.Fixed bugs for sensor history page.
+    M  src/api/sensor_type_status.js
+    M  src/assets/scss/layout_child.scss
+    M  src/components/sections/logDataTable.vue
+    M  src/components/sensors/elevator.vue
+    M  src/components/sensors/elevator2.vue
+    M  src/components/sensors/gas.vue
+    M  src/components/sensors/secondary.vue
+3.Modify last versions for browser.
+    M  package.json
+    
+-----------------------------------------------------------------------------------
+2018/02/01 Jerry [GUI]
+-----------------------------------------------------------------------------------
+move the fetchTableData event to parent component
+1.member profile page
+    M:   src/components/account.vue
+2.prevent form default event
+    M:   src/components/login.vue
+3.move the fetchTableData event to parent component
+    M:   src/components/pubManag/env.vue
+    M:   src/components/pubManag/index.vue
+    M:   src/components/pubManag/leakage.vue
+    M:   src/components/pubManag/manhole.vue
+    M:   src/components/pubManag/river.vue
+    M:   src/components/pubManag/secWater.vue
+    M:   src/components/pubManag/traffic.vue
+    M:   src/components/pubSafety/bayonet.vue
+    M:   src/components/pubSafety/dangerHouse.vue
+    M:   src/components/pubSafety/elevator.vue
+    M:   src/components/pubSafety/fire.vue
+    M:   src/components/pubSafety/gas.vue
+    M:   src/components/pubSafety/index.vue
+    M:   src/components/pubSafety/security.vue
+    M:   src/components/pubService/community.vue
+    M:   src/components/pubService/disabled.vue
+    M:   src/components/pubService/index.vue
+    M:   src/components/pubService/noise.vue
+    M:   src/components/pubService/oldman.vue
+    M:   src/components/pubService/restroom.vue
+    M:   src/components/pubService/trashcan.vue
+-----------------------------------------------------------------------------------
+2018/02/01 Ingird [GUI]
+-----------------------------------------------------------------------------------
+1.Modify layout and add button for return.
+M  src/assets/scss/basic.scss
+M  src/assets/scss/loading.scss
+2.Modify history page for sensor and check feature.
+M  src/assets/scss/layout_child.scss
+M  src/api/sensor_type_status.js
+M  src/components/sections/logDataTable.vue
+M  src/components/sections/serverReturn.vue
+M  src/components/sensors/anchor.vue
+M  src/components/sensors/devenv.vue
+M  src/components/sensors/door.vue
+M  src/components/sensors/elevator.vue
+M  src/components/sensors/elevator2.vue
+M  src/components/sensors/gas.vue
+M  src/components/sensors/hydrant.vue
+M  src/components/sensors/infrared.vue
+M  src/components/sensors/manhole.vue
+M  src/components/sensors/manhole2.vue
+M  src/components/sensors/move.vue
+M  src/components/sensors/parkingF.vue
+M  src/components/sensors/parkingR.vue
+M  src/components/sensors/police.vue
+M  src/components/sensors/search.vue
+M  src/components/sensors/secondary.vue
+M  src/components/sensors/smoke.vue
+M  src/components/sensors/smoke2.vue
+M  src/components/sensors/temp.vue
+M  src/components/sensors/toilet.vue
+M  src/components/sensors/tracker.vue
+M  src/components/sensors/watermeter.vue
+-----------------------------------------------------------------------------------
+2018/01/31 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Modify application API.
+M   src/components/pubManag/env.vue
+M   src/components/pubManag/leakage.vue
+M   src/components/pubManag/manhole.vue
+M   src/components/pubManag/river.vue
+M   src/components/pubManag/secWater.vue
+M   src/components/pubManag/traffic.vue
+M   src/components/pubSafety/bayonet.vue
+M   src/components/pubSafety/dangerHouse.vue
+M   src/components/pubSafety/elevator.vue
+M   src/components/pubSafety/fire.vue
+M   src/components/pubSafety/gas.vue
+M   src/components/pubSafety/security.vue
+M   src/components/pubService/community.vue
+M   src/components/pubService/disabled.vue
+M   src/components/pubService/noise.vue
+M   src/components/pubService/oldman.vue
+M   src/components/pubService/restroom.vue
+M   src/components/pubService/trashcan.vue
+2. Add callbacks to barStock options to improve chart tooltips format.
+M   src/assets/js/chartOptions.js
+3. Change end-line type to LF.
+M   src/components/sections/serverReturn.vue
+
+-----------------------------------------------------------------------------------
+2018/01/31 Jerry [GUI]
+-----------------------------------------------------------------------------------
+add token information to login process
+1.error img in application page
+    M:   src/assets/scss/loading.scss
+2.correct pagination width
+    M:   src/assets/scss/table.scss
+3.set login by ajax 
+    M:   src/components/login.vue
+    M:   src/store/getters.js
+    M:   src/store/modules/login.js
+4.send token info when fetch data
+    M:   src/components/pubManag/env.vue
+    M:   src/components/pubManag/leakage.vue
+    M:   src/components/pubManag/manhole.vue
+    M:   src/components/pubManag/river.vue
+    M:   src/components/pubManag/secWater.vue
+    M:   src/components/pubManag/traffic.vue
+    M:   src/components/pubSafety/bayonet.vue
+    M:   src/components/pubSafety/dangerHouse.vue
+    M:   src/components/pubSafety/elevator.vue
+    M:   src/components/pubSafety/fire.vue
+    M:   src/components/pubSafety/gas.vue
+    M:   src/components/pubSafety/security.vue
+    M:   src/components/pubService/community.vue
+    M:   src/components/pubService/disabled.vue
+    M:   src/components/pubService/noise.vue
+    M:   src/components/pubService/oldman.vue
+    M:   src/components/pubService/restroom.vue
+    M:   src/components/pubService/trashcan.vue
+    M:   src/components/sensors/anchor.vue
+    M:   src/components/sensors/devenv.vue
+    M:   src/components/sensors/door.vue
+    M:   src/components/sensors/elevator.vue
+    M:   src/components/sensors/elevator2.vue
+    M:   src/components/sensors/gas.vue
+    M:   src/components/sensors/hydrant.vue
+    M:   src/components/sensors/infrared.vue
+    M:   src/components/sensors/manhole.vue
+    M:   src/components/sensors/manhole2.vue
+    M:   src/components/sensors/move.vue
+    M:   src/components/sensors/parkingF.vue
+    M:   src/components/sensors/parkingR.vue
+    M:   src/components/sensors/police.vue
+    M:   src/components/sensors/search.vue
+    M:   src/components/sensors/secondary.vue
+    M:   src/components/sensors/smoke.vue
+    M:   src/components/sensors/smoke2.vue
+    M:   src/components/sensors/temp.vue
+    M:   src/components/sensors/toilet.vue
+    M:   src/components/sensors/tracker.vue
+    M:   src/components/sensors/watermeter.vue
+
+-----------------------------------------------------------------------------------
+2018/01/31 Ingrid [GUI]
+-----------------------------------------------------------------------------------
+1.Implement sensor history.
+M  src/assets/scss/layout_child.scss
+M  src/components/sections/dataTable.vue
+M  src/components/sections/logDataTable.vue
+M  src/components/sensors/devenv.vue
+M  src/components/sensors/door.vue
+M  src/components/sensors/hydrant.vue
+M  src/components/sensors/police.vue
+M  src/components/sensors/secondary.vue
+M  src/components/sensors/watermeter.vue
+
+-----------------------------------------------------------------------------------
+2018/01/30 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Fix when sensor amount is more than 3000, the map performace will be very bad.
+   -> Load baidu map marker cluster by Baidu map library instead of those in vue library.
+M   src/components/sections/baiduMap.vue
+A   src/assets/js/BaiduMap_Cluster.js
+A   src/assets/js/BaiduMap_Cluster_min.js
+
+-----------------------------------------------------------------------------------
+2018/01/30 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Fix issue: After vue-cli build, static assets (like images) path becomes wrong and leads to resource not found.
+2. Change build folder name from 'v2/' to 'GUI_v3/'.
+M   build/webpack.base.conf.js
+M   config/index.js
+A   build/staticPathResolver.js
+3. Cancel HTML5 history mode because we need server-side configuration to correct vue-router behavior.
+M   src/router/index.js
+4. Correct words.
+M   src/components/sections/serverReturn.vue
+
+-----------------------------------------------------------------------------------
+2018/01/30 Ingurd [GUI]
+-----------------------------------------------------------------------------------
+1.Implement datepicker(v-calendar).
+    M:   package.json
+    M:   src/components/sensors/index.vue
+    M:   src/main.js
+2.Implement sensor history.
+    A:   src/api/sensor_type_status.js
+    A:   src/components/sections/logDataTable.vue
+    M:   src/components/sensors/door.vue
+    M:   src/components/sensors/search.vue
+    M:   src/assets/scss/button.scss
+    M:   src/assets/scss/index.scss
+    M:   src/assets/scss/layout.scss
+    M:   src/assets/scss/layout_child.scss
+    M:   src/assets/scss/table.scss
+    M:   src/assets/scss/layout_child.scss
+3.Move image link .vue to css-file.
+    M:   src/components/sections/serverReturn.vue
+    M:   src/assets/scss/loading.scss
+
+-----------------------------------------------------------------------------------
+2018/01/30 Jerry [GUI]
+-----------------------------------------------------------------------------------
+table in application pages
+1.error img in application page
+    M:   src/assets/scss/loading.scss
+2.correct pagination width
+    M:   src/assets/scss/table.scss
+3.table in application pages
+    M:   src/components/pubManag/env.vue
+    M:   src/components/pubManag/leakage.vue
+    M:   src/components/pubManag/manhole.vue
+    M:   src/components/pubManag/river.vue
+    M:   src/components/pubManag/secWater.vue
+    M:   src/components/pubManag/traffic.vue
+    M:   src/components/pubSafety/bayonet.vue
+    M:   src/components/pubSafety/dangerHouse.vue
+    M:   src/components/pubSafety/elevator.vue
+    M:   src/components/pubSafety/fire.vue
+    M:   src/components/pubSafety/gas.vue
+    M:   src/components/pubSafety/security.vue
+    M:   src/components/pubService/community.vue
+    M:   src/components/pubService/disabled.vue
+    M:   src/components/pubService/noise.vue
+    M:   src/components/pubService/oldman.vue
+    M:   src/components/pubService/restroom.vue
+    M:   src/components/pubService/trashcan.vue
+4.adjust html structure to fix style bug
+    M:   src/components/sensors/search.vue
+
+-----------------------------------------------------------------------------------
+2018/01/30 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Change the height of map-container
+2. Disable 'openmap' button when device has no valid GPS coordinates.
+3. Add setViewport in map.
+M   src/assets/scss/layout_child.scss
+M   src/components/sections/baiduMap.vue
+M   src/components/sections/dataTable.vue
+
+-----------------------------------------------------------------------------------
+2018/01/29 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Rewrite application default layout.
+M   src/components/pubSafety/gas.vue
+M   src/components/pubManag/env.vue
+M   src/components/pubManag/leakage.vue
+M   src/components/pubManag/manhole.vue
+M   src/components/pubManag/river.vue
+M   src/components/pubManag/secWater.vue
+M   src/components/pubManag/traffic.vue
+M   src/components/pubService/community.vue
+M   src/components/pubService/disabled.vue
+M   src/components/pubService/noise.vue
+M   src/components/pubService/oldman.vue
+M   src/components/pubService/restroom.vue
+M   src/components/pubService/trashcan.vue
+
+-----------------------------------------------------------------------------------
+2018/01/27 Jerry [GUI]
+-----------------------------------------------------------------------------------
+let table head to get in parent component and error show component
+1.menu a tag click miss issue
+A   M:   src/assets/scss/index.scss
+2.add Class smallsize to let search lebel be enable to 3 font
+A   M:   src/assets/scss/layout_child.scss
+3.let error.nodata.searchIndex to be center
+A   M:   src/assets/scss/loading.scss
+4.let table to have suitable height
+A   M:   src/assets/scss/table.scss
+5.mistype of  pagiTitle
+A   M:   src/components/account.vue
+A   M:   src/components/pubManag/env.vue
+A   M:   src/components/pubManag/leakage.vue
+A   M:   src/components/pubManag/manhole.vue
+A   M:   src/components/pubManag/river.vue
+A   M:   src/components/pubManag/secWater.vue
+A   M:   src/components/pubManag/traffic.vue
+A   M:   src/components/pubSafety/security.vue
+A   M:   src/components/pubService/community.vue
+A   M:   src/components/pubService/disabled.vue
+A   M:   src/components/pubService/noise.vue
+A   M:   src/components/pubService/oldman.vue
+A   M:   src/components/pubService/restroom.vue
+A   M:   src/components/pubService/trashcan.vue
+6.let table head to get in parent component
+A   M:   src/components/pubSafety/bayonet.vue
+A   M:   src/components/pubSafety/dangerHouse.vue
+A   M:   src/components/pubSafety/elevator.vue
+A   M:   src/components/pubSafety/fire.vue
+A   M:   src/components/pubSafety/gas.vue
+A   M:   src/components/sections/dataTable.vue
+A   M:   src/components/sensors/anchor.vue
+A   M:   src/components/sensors/devenv.vue
+A   M:   src/components/sensors/door.vue
+A   M:   src/components/sensors/elevator.vue
+A   M:   src/components/sensors/elevator2.vue
+A   M:   src/components/sensors/gas.vue
+A   M:   src/components/sensors/hydrant.vue
+A   M:   src/components/sensors/infrared.vue
+A   M:   src/components/sensors/manhole.vue
+A   M:   src/components/sensors/manhole2.vue
+A   M:   src/components/sensors/move.vue
+A   M:   src/components/sensors/parkingF.vue
+A   M:   src/components/sensors/parkingR.vue
+A   M:   src/components/sensors/police.vue
+A   M:   src/components/sensors/secondary.vue
+A   M:   src/components/sensors/smoke.vue
+A   M:   src/components/sensors/smoke2.vue
+A   M:   src/components/sensors/temp.vue
+A   M:   src/components/sensors/toilet.vue
+A   M:   src/components/sensors/tracker.vue
+A   M:   src/components/sensors/watermeter.vue
+7.error show component
+A   A:   src/assets/images/bg_search_404.svg
+A   A:   src/assets/images/bg_sensor search.svg
+A   A:   src/assets/images/bg_systembroke.svg
+A   A:   src/components/sections/serverReturn.vue
+-----------------------------------------------------------------------------------
+2018/01/27 Ingird [GUI]
+-----------------------------------------------------------------------------------
+1. Fixed bug for layout.
+2. Fixed bug for router.
+3. Add APIURL for old api.
+M  src/assets/scss/index.scss
+M  src/assets/scss/layout_child.scss
+M  src/assets/scss/singlePage.scss
+M  src/assets/scss/table.scss
+M  src/components/index.vue
+M  src/router/index.js
+renamed:    map_sensors_move.svg -> map_sensors_motion.svg
+
+-----------------------------------------------------------------------------------
+2018/01/27 Jerry [GUI]
+-----------------------------------------------------------------------------------
+add filter and search to lora device page id 2 3 5 6 7 11 16 20
+1.add span tag
+    M:   src/components/sensors/devenv.vue
+2.add search and filter control function in lora device page
+    M:   src/components/sensors/parkingF.vue
+    M:   src/components/sensors/parkingR.vue
+    M:   src/components/sensors/secondary.vue
+    M:   src/components/sensors/smoke.vue
+    M:   src/components/sensors/smoke2.vue
+    M:   src/components/sensors/temp.vue
+    M:   src/components/sensors/tracker.vue
+    M:   src/components/sensors/watermeter.vue
+-----------------------------------------------------------------------------------
+2018/01/27 Ingrid [GUI]
+-----------------------------------------------------------------------------------
+1. Add list of application & sensor type.
+2. Add images for noData & dataError.
+3. Modify layout for menu & button & table & login.
+4. Modify path of route.
+5. Rewrite page od sensor search.
+6. Add hover status for chart.
+
+A  src/api/application.js
+A  src/api/sensor_lora.js
+A  src/api/sensor_other.js
+A  src/assets/images/bg_sensor_search.svg
+A  src/assets/images/bg_sorry.svg
+A  src/assets/images/ic_edit.svg
+A  src/assets/images/ic_info.svg
+M  src/assets/images/banner.png
+M  package.json
+M  src/api/login.js
+M  src/assets/scss
+M  src/assets/js/chartOptions.js
+M  src/router/index.js
+M  src/components/Home.vue
+M  src/components/index.vue
+M  src/components/pubSafety/index.vue
+M  src/components/pubService/index.vue
+M  src/components/pubManag/index.vue
+M  src/components/pubService/index.vue
+M  src/components/sensors/index.vue
+M  src/components/sensors/search.vue
+M  src/components/sensors/hydrant.vue
+M  src/components/pubSafety/elevator.vue
+M  src/components/pubSafety/fire.vue
+M  src/components/pubSafety/gas.vue
+M  src/components/pubSafety/security.vue
+
+-----------------------------------------------------------------------------------
+2018/01/26 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Rewrite single device map as a component.
+2. Fix map center is incorrect issue.
+3. Rename map-sensors-*.svg to map_sensors_*.svg
+M   src/assets/images/item_*
+M   src/assets/scss/index.scss
+M   src/components/sections/baiduMap.vue
+M   src/components/sensors/anchor.vue
+M   src/components/sensors/devenv.vue
+M   src/components/sensors/door.vue
+M   src/components/sensors/elevator.vue
+M   src/components/sensors/elevator2.vue
+M   src/components/sensors/gas.vue
+M   src/components/sensors/hydrant.vue
+M   src/components/sensors/infrared.vue
+M   src/components/sensors/manhole.vue
+M   src/components/sensors/manhole2.vue
+M   src/components/sensors/parkingF.vue
+M   src/components/sensors/parkingR.vue
+M   src/components/sensors/police.vue
+M   src/components/sensors/secondary.vue
+M   src/components/sensors/smoke.vue
+M   src/components/sensors/smoke2.vue
+M   src/components/sensors/temp.vue
+M   src/components/sensors/toilet.vue
+M   src/components/sensors/tracker.vue
+M   src/components/sensors/watermeter.vue
+M   src/router/index.js
+renamed:    src/assets/images/map-sensors-*.svg -> src/assets/images/map_sensors_*.svg
+A   src/components/sections/baiduMap_singleDev.vue
+
+-----------------------------------------------------------------------------------
+2018/01/26 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Generate Charts.
+M   src/components/pubSafety/bayonet.vue
+M   src/components/pubSafety/dangerHouse.vue
+M   src/components/pubSafety/elevator.vue
+M   src/components/pubSafety/fire.vue
+M   src/components/pubSafety/gas.vue
+M   src/components/pubSafety/security.vue
+2. Fix route path of 'dangerHouse' component.
+M   src/router/index.js
+
+-----------------------------------------------------------------------------------
+2018/01/26 Jerry [GUI]
+-----------------------------------------------------------------------------------
+add filter and search to lora device page id 1 4 8 9 12 13 14 15 18
+1.switch to first page after search
+    M:   src/components/sections/dataTable.vue
+2.change port from 5438 to 3328
+    M:   src/main.js
+3.add search and filter control function in lora device page
+    M:   src/components/sensors/anchor.vue
+    M:   src/components/sensors/door.vue
+    M:   src/components/sensors/elevator.vue
+    M:   src/components/sensors/elevator2.vue
+    M:   src/components/sensors/gas.vue
+    M:   src/components/sensors/infrared.vue
+    M:   src/components/sensors/manhole.vue
+    M:   src/components/sensors/manhole2.vue
+    M:   src/components/sensors/move.vue
+3.add search and filter control function in hydrant page
+    M:   src/components/sensors/hydrant.vue
+
+-----------------------------------------------------------------------------------
+2018/01/26 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Add a common config file 'chartOptions' to control charts options.
+2. Add GET API in fire component.
+M   src/components/Home.vue
+M   src/components/sections/barChart.vue
+M   src/components/sections/donutChart.vue
+A   src/assets/js/chartOptions.js
+D   src/components/sections/barStockChart.vue
+renamed:    src/components/pubSafety/fire2.vue -> src/components/pubSafety/fire.vue
+
+-----------------------------------------------------------------------------------
+2018/01/26 Baverly [GUI]
+-----------------------------------------------------------------------------------
+1. Add device map to show all devices on map.
+2. Correct icon for item_watermeter and item_dev_secWater.
+M   src/assets/scss/index.scss
+M   src/assets/scss/layout_child.scss
+M   src/components/sections/dataTable.vue
+M   src/components/sensors/anchor.vue
+M   src/components/sensors/devenv.vue
+M   src/components/sensors/door.vue
+M   src/components/sensors/elevator.vue
+M   src/components/sensors/elevator2.vue
+M   src/components/sensors/gas.vue
+M   src/components/sensors/hydrant.vue
+M   src/components/sensors/infrared.vue
+M   src/components/sensors/manhole.vue
+M   src/components/sensors/manhole2.vue
+M   src/components/sensors/move.vue
+M   src/components/sensors/parkingF.vue
+M   src/components/sensors/parkingR.vue
+M   src/components/sensors/police.vue
+M   src/components/sensors/secondary.vue
+M   src/components/sensors/smoke.vue
+M   src/components/sensors/smoke2.vue
+M   src/components/sensors/temp.vue
+M   src/components/sensors/toilet.vue
+M   src/components/sensors/tracker.vue
+M   src/components/sensors/watermeter.vue
+A   src/assets/images/map-sensors-*
+A   src/components/mixin/*
+A   src/components/sections/baiduMap.vue
+
+-----------------------------------------------------------------------------------
+2018/01/25 Jerry [GUI]
+-----------------------------------------------------------------------------------
+add search and select filter to hydrant page
+1.add chart.js
+    M:   package.json
+2.add search and select filter to hydrant page
+    M:   src/assets/scss/layout_child.scss
+    M:   src/components/sections/dataTable.vue
+    M:   src/components/sensors/hydrant.vue
+
+-----------------------------------------------------------------------------------
+2018/01/24 Lucy [GUI]
+-----------------------------------------------------------------------------------
+1. Change barChart style and color.
+2. Translate words from Trad. Chinese to Simp. Chinese.
+M   src/components/Home.vue
+M   src/components/sections/barChart.vue
+
+-----------------------------------------------------------------------------------
+2018/01/24 Ingird [GUI]
+-----------------------------------------------------------------------------------
+1.Modify layout of app page.
+2.Modify layout of pagination.
+1.Implement barStockChart components base on chartjs/vue-chartjs.
+2.Create barStockChart include vue-chart.
+M  src/assets/scss/basic.scss
+M  src/assets/scss/layout.scss
+M  src/assets/scss/layout_child.scss
+M  src/assets/scss/table.scss
+A  src/assets/images/bg_purple_reverse.png
+M  src/main.js
+
+-----------------------------------------------------------------------------------
+2018/01/24 Ingird [GUI]
+-----------------------------------------------------------------------------------
+1.Implement chart components base on chartjs/vue-chartjs.
+2.Create js-file include vue-chart.
+3.Modify api request URL.
+M  src/components/Home.vue
+M  src/assets/scss/layout.scss
+M  package.json
+A  src/assets/js
+A  src/components/sections/barChart.vue
+M  config/index.js
+M  src/store/modules/login.js
+M  src/components/sensors/
+
+-----------------------------------------------------------------------------------
+2018/01/23 Ingird [GUI]
+-----------------------------------------------------------------------------------
+1.Display current path for menu.
+M  src/components/sections/dataTable.vue
+M  src/components/sensors/
+M  src/components/index.vue
+M  src/router/index.js
+
+----------------------------------------------------------------------------------
+2018/01/23 Ingird [GUI]
+-----------------------------------------------------------------------------------
+1.Imclude chartjs/vue-chartjs and vue-baidu-map.
+2.Add map display and list/map toggle for sensor page.
+3.Modify api baseURL config.
+M  package.json
+M  src/assets/scss/
+M  src/components/sections/dataTable.vue
+M  src/components/sensors/
+M  src/main.js
+M  src/router/index.js
+
+-----------------------------------------------------------------------------------
+2018/01/23 Ingird [GUI]
+-----------------------------------------------------------------------------------
+1.Implement access control based on Vue/vuex/Vue-Router/axios.
+2.Implement layout design by ingrid based on SCSS.
+3.Initial Commit

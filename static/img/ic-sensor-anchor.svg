@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="108px" viewBox="0 0 108 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="94.3373843%" y1="73.7528935%" x2="35.546875%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#77ACFF" offset="0%"></stop>
+            <stop stop-color="#A887FF" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="51" cy="51" r="51"></circle>
+        <filter x="-14.2%" y="-12.3%" width="128.4%" height="128.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.584313725   0 0 0 0 0.584313725   0 0 0 0 1  0 0 0 0.698935688 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-8">
+            <g id="Group-22" transform="translate(3.000000, 3.000000)">
+                <g id="Oval-9">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <path d="M67.763,33.237 C72.155,37.6595 74.9,43.7595 74.9,50.5 C74.9,63.981 63.981,74.9 50.5,74.9 C37.019,74.9 26.1,63.981 26.1,50.5 C26.1,38.056 35.4025,27.808 47.45,26.3135 L47.45,32.4745 C38.788,33.9385 32.2,41.4415 32.2,50.5 C32.2,60.5955 40.4045,68.8 50.5,68.8 C60.5955,68.8 68.8,60.5955 68.8,50.5 C68.8,45.437 66.7565,40.862 63.432,37.568 L59.1315,41.8685 C61.3275,44.095 62.7,47.145 62.7,50.5 C62.7,57.2405 57.2405,62.7 50.5,62.7 C43.7595,62.7 38.3,57.2405 38.3,50.5 C38.3,44.827 42.204,40.0995 47.45,38.727 L47.45,45.254 C45.62,46.3215 44.4,48.243 44.4,50.5 C44.4,53.855 47.145,56.6 50.5,56.6 C53.855,56.6 56.6,53.855 56.6,50.5 C56.6,48.243 55.38,46.291 53.55,45.254 L53.55,20 L50.5,20 C33.664,20 20,33.664 20,50.5 C20,67.336 33.664,81 50.5,81 C67.336,81 81,67.336 81,50.5 C81,42.082 77.584,34.457 72.0635,28.9365 L67.763,33.237 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

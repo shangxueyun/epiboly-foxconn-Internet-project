@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>baidu map</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/baidumap.css">
+</head>
+<body>
+  <div id="bdmap" class="map-container"></div>
+  <div class="floor-container">
+    <span class="floor-pointer icomoon icomoon-ic-pointer">实景图：</span>
+    <select id="building" disabled></select>
+    <select id="floor" disabled></select>
+    <button id="changeFloor" type="button" class="btn btn-primary" disabled>前往</button>
+  </div>
+  <div id="errorHint" class="message"></div>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TZVwkIoK2UYzg83rREBvIMOGab3vZi5S"></script>
+  <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/static/js/popper.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/select2.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script>
+    var IV_settting = {
+      base_url: 'http://10.134.171.250:8080/iv.foxconn'
+    };
+    function getBuildingFloorData($building, $floor) {
+      var get_url = IV_settting.base_url + '/api/site_model';
+      $.ajax({
+        url: get_url,
+        type: 'GET',
+        cache: false,
+        dataType: 'json'
+      }).done(function(site_data) {
+        if (site_data && site_data.length) {
+          var b_opts = [];
+          $.each(site_data, function(idx, site) {
+            if (site.type == 'BUILDING') {
+              var floors = [];
+              $.each(site.children, function(f_idx, v) {
+                if (v.type == 'FLOOR') {
+                  floors.push({ id: v.id, text: v.name });
+                }
+              });
+              b_opts.push(new Option(site.name, JSON.stringify({ site_id: site.id, floors: floors }), false, false));
+            }
+          });
+          $building.append(b_opts).val(null).trigger('change').prop('disabled', false).on('change', function() {
+            var building = $(this).find(':selected').data();
+            var f_opts = [];
+            toggleErrorClass($(this), false);
+            $.each(building.floors, function(f_idx, v) {
+              f_opts.push(new Option(v.text, v.id, false, false));
+            });
+            $floor.append(f_opts).val(null).trigger('change').prop('disabled', false)
+          });
+          $floor.on('change', function() {
+            toggleErrorClass($(this), false);
+          });
+        }
+      }).fail(function() {
+        console.log('loading navvis failed');
+        $('#errorHint').html('<div class="message-notice"><div class="message-notice-content">Navvis地图载入失败，请尝试重新整理</div></div>').addClass('active');
+      });
+    }
+    function createSelect($target, placeholder, userConfig) {
+      var config = $.extend({}, {
+        width: '170px',
+        minimumResultsForSearch: Infinity,
+        placeholder: placeholder
+      }, userConfig);
+      var selector = $target.select2(config).data('select2');;
+      selector.$container.addClass('build-floor-select2');
+      selector.$dropdown.addClass('build-floor-select2');
+    }
+    function tryParseJSON(jsonString) {
+      try {
+        var o = JSON.parse(jsonString);
+        // Handle non-exception-throwing cases:
+        // Neither JSON.parse(false) or JSON.parse(1234) throw errors, hence the type-checking,
+        // but... JSON.parse(null) returns null, and typeof null === "object", 
+        // so we must check for that, too. Thankfully, null is falsey, so this suffices:
+        if (o && typeof o === "object") {
+          return o;
+        }
+      } catch (e) { }
+      return {};
+    }
+    function toggleErrorClass($target, hasError) {
+      $('#select2-' + $target.attr('id') + '-container').parents('.select2-container').toggleClass('has-error', hasError);
+    }
+    $(document).ready(function() {
+      var $obj = {
+        building: $('#building'),
+        floor: $('#floor'),
+        error: $('#errorHint')
+      };
+      createSelect($obj.building, '栋', {
+        templateSelection: function(data) {
+          var dataId = tryParseJSON(data.id);
+          $(data.element).attr({
+            'data-site-id': dataId.site_id,
+            'data-floors':JSON.stringify(dataId.floors)
+          });
+          return data.text;
+        }
+      });
+      createSelect($obj.floor, '楼');
+      getBuildingFloorData($obj.building, $obj.floor);
+      $('#changeFloor').click(function() {
+        var flag = true;
+        var t_building = $obj.building.select2('data'),
+            t_floor = $obj.floor.select2('data');
+        if (!t_building.length) {
+          flag = false;
+          toggleErrorClass($obj.building, true);
+        }
+        if (!t_floor.length) {
+          flag = false;
+          toggleErrorClass($obj.floor, true);
+        }
+        if (flag == false) {
+          $obj.error.html('<div class="message-notice"><div class="message-notice-content">请先选择建筑物与楼层再切换</div></div>').addClass('active');
+          setTimeout(function() {
+            $obj.error.removeClass('active');
+            setTimeout(function() {
+              $obj.error.empty();
+            }, 250);
+          }, 2500)
+        } else {
+          // @TODO: postMessage content should be stringified
+          window.parent.postMessage({flag: 'switch_to_navvis', building: t_building[0].id, floor: t_floor[0].id}, '*');
+        }
+      });
+      var map = new BMap.Map('bdmap');
+      var center_point = new BMap.Point(114.055995, 22.662097);
+      map.centerAndZoom(center_point, 19);
+      map.enableScrollWheelZoom(true);
+      searchByLocationName(map, '深圳富士康龙华园区-E5栋');
+      
+      function searchByLocationName (map, name) {
+        var local = new BMap.LocalSearch(map, {      
+          renderOptions:{map: map}      
+        });      
+        local.search(name);
+      }
+      function getMsgFromParent (event) {
+        if (event.data.flag == 'navvis_init_finish') {
+          setTimeout(function () {
+            $('#changeFloor').prop('disabled', false);
+          }, 1000);
+        }
+      }
+      window.addEventListener('message', getMsgFromParent, false);
+    });
+    </script>
+</body>
+</html>

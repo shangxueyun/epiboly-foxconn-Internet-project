@@ -1,2 +1,23 @@
 # epiboly-foxconn-Internet-project
-澶栧寘瀵屽＋搴蜂笂娴疯嚜鍏徃椤圭洰-2018-6 - 2018-7
+外包富士康上海自公司项目-2018-6 - 2018-7
+
+
+> A Vue.js project
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Factory - NavVis 3D Map</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/navvis.css">
+</head>
+<body>
+  <div ng-include src="'iv.html'" class="map-self"></div>
+  <div class="floor-container">
+    <span class="floor-pointer icomoon icomoon-ic-pointer">实景图：</span>
+    <select id="building" disabled></select>
+    <select id="floor" disabled></select>
+    <button id="changeFloor" type="button" class="btn btn-primary">前往</button>
+  </div>
+  <button id="changeView" type="button" class="btn btn-success view-change">3D，2D切换</button>
+  <div id="errorHint" class="message"></div>
+  <script src="http://10.134.171.250:8080/iv.foxconn/IndoorViewerAPI.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/static/js/popper.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/select2.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script>
+    var indoorViewer = null;
+    var IV_settting = {
+      base_url: 'http://10.134.171.250:8080/iv.foxconn',
+      lang_prefix: 'lang=zh',
+      init_view: 'map',
+      init_zoom: 200.0,
+      init_show_types: '33', // scan_place
+      type_category: [],
+      init: true
+    };
+    function init3dMap() {
+      IV.loaded(function() {
+        indoorViewer = new IndoorViewer({
+          'base_url': IV_settting.base_url,
+          'core.init.view': IV_settting.init_view,
+          'core.init.map.fov': IV_settting.init_zoom,
+          'poi.types': IV_settting.init_show_types,
+          'menu.view.visible': false,
+          'menu.login.visible': false,
+          'menu.settings.visible': false,
+          'menu.poi.visible': false,
+          'ui.floorchanger.visible': false,
+          'onLoadComplete': function() {
+            window.parent.postMessage( {flag: 'navvis_init_finish'}, '*');
+            indoorViewer.setLanguage('zh');
+            setSideMenu(indoorViewer.getMenuItems());
+            registerMapListenEvent(indoorViewer);
+          }
+        });
+      });
+    }
+    function registerMapListenEvent(indoorViewer) {
+      $('div.vertical-menu-content').delegate('#devList tr[data-poi-id]', 'click', function() {
+        // move to POI id when click on the row of the device list
+        indoorViewer.moveToPoiId($(this).data('poiId'));
+      }).delegate('.type-expand', 'click', function() {
+        // expand or collapse type group
+        if ($(this).hasClass('type-collapse')) {
+          $(this).removeClass('type-collapse');
+          $(this).parents('tr').nextUntil('tr.blank-line').attr('hidden', false);
+        } else {
+          $(this).addClass('type-collapse');
+          $(this).parents('tr').nextUntil('tr.blank-line').attr('hidden', true);
+        }
+      });
+    }
+    function createSelect($target, placeholder, userConfig) {
+      var config = $.extend({}, {
+        width: '170px',
+        minimumResultsForSearch: Infinity,
+        placeholder: placeholder
+      }, userConfig);
+      var selector = $target.select2(config).data('select2');;
+      selector.$container.addClass('build-floor-select2');
+      selector.$dropdown.addClass('build-floor-select2');
+    }
+    function tryParseJSON(jsonString) {
+      try {
+        var o = JSON.parse(jsonString);
+        // Handle non-exception-throwing cases:
+        // Neither JSON.parse(false) or JSON.parse(1234) throw errors, hence the type-checking,
+        // but... JSON.parse(null) returns null, and typeof null === "object", 
+        // so we must check for that, too. Thankfully, null is falsey, so this suffices:
+        if (o && typeof o === "object") {
+          return o;
+        }
+      } catch (e) { }
+      return {};
+    }
+    function setPanoramaScene() {
+      if (IV_settting.init_view == 'map') {
+        swapScene();
+      }
+    }
+    function swapScene() {
+      var update_view = IV_settting.init_view == 'map' ? 'panorama': 'map';
+      IV_settting.init_view = update_view;
+      indoorViewer.setMainScene(update_view);
+
+      if (IV_settting.init == true) {
+        IV_settting.init = false;
+        $('#insetPanel, #changeView').show();
+        indoorViewer.setPoiTypesVisibility(true);
+        indoorViewer.setPoiTypesVisibility(false, [parseInt(IV_settting.init_show_types)]);
+      }
+    }
+    function toggleErrorClass($target, hasError) {
+      $('#select2-' + $target.attr('id') + '-container').parents('.select2-container').toggleClass('has-error', hasError);
+    }
+    function setSideMenu(menuItems) {
+      IV.bootstrapped(function() {
+        // current has no translation yet, so we translate by ourselves
+        var translation = { 'User': '登入', 'Datasets': '数据集', 'View': '视图', 'POI Types': '兴趣点类型', 'Editor Modes': '编辑模式', 'Share': '分享', 'Settings': '设置', 'Measurements': '测量' };
+        $.each(menuItems, function(key, menu) {
+          var newTitle = translation[menu.title];
+          if (newTitle) {
+            menuItems[key].title = newTitle;
+          }
+          if (menu.items) {
+            $.each(menu.items, function(subkey, submenu) {
+              var newTitle = translation[submenu.title];
+              if (newTitle) {
+                menuItems[key].items[subkey].title = newTitle;
+              }
+            });
+          }
+        });
+
+        var devListItem = {
+          title: '设备终端列表',
+          icon: {
+            className: 'menu-dev-list icomoon-ic-menu'
+          },
+          isVisible: function() {
+            return true;
+          },
+          isPreviewIconVisible: function() {
+            return true;
+          },
+          order: 1,
+          template: '/static/template/NavVis-devList.html'
+        };
+        menuItems.push(devListItem);
+      });
+    }
+    function getBuildingFloorData($building, $floor) {
+      var get_url = IV_settting.base_url + '/api/site_model';
+      $.ajax({
+        url: get_url,
+        type: 'GET',
+        cache: false,
+        dataType: 'json'
+      }).done(function(site_data) {
+        if (site_data && site_data.length) {
+          var b_opts = [];
+          $.each(site_data, function(idx, site) {
+            if (site.type == 'BUILDING') {
+              var floors = [];
+              $.each(site.children, function(f_idx, v) {
+                if (v.type == 'FLOOR') {
+                  floors.push({ id: v.id, text: v.name });
+                }
+              });
+              b_opts.push(new Option(site.name, JSON.stringify({ site_id: site.id, floors: floors }), false, false));
+            }
+          });
+          $building.append(b_opts).val(null).trigger('change').prop('disabled', false).on('change', function() {
+            var building = $(this).find(':selected').data();
+            var f_opts = [];
+            toggleErrorClass($(this), false);
+            $.each(building.floors, function(f_idx, v) {
+              f_opts.push(new Option(v.text, v.id, false, false));
+            });
+            $floor.append(f_opts).val(null).trigger('change').prop('disabled', false)
+          });
+          $floor.on('change', function() {
+            toggleErrorClass($(this), false);
+          });
+        }
+      });
+    }
+    $(document).ready(function() {
+      var $obj = {
+        building: $('#building'),
+        floor: $('#floor'),
+        error: $('#errorHint')
+      };
+      init3dMap();
+      createSelect($obj.building, '栋', {
+        templateSelection: function(data) {
+          var dataId = tryParseJSON(data.id);
+          $(data.element).attr({
+            'data-site-id': dataId.site_id,
+            'data-floors':JSON.stringify(dataId.floors)
+          });
+          return data.text;
+        }
+      });
+      createSelect($obj.floor, '楼');
+      getBuildingFloorData($obj.building, $obj.floor);
+      $('#changeFloor').click(function() {
+        var flag = true;
+        var t_building = $obj.building.select2('data'),
+            t_floor = $obj.floor.select2('data');
+        if (!t_building.length) {
+          flag = false;
+          toggleErrorClass($obj.building, true);
+        }
+        if (!t_floor.length) {
+          flag = false;
+          toggleErrorClass($obj.floor, true);
+        }
+        if (flag == false) {
+          $obj.error.html('<div class="message-notice"><div class="message-notice-content">请先选择建筑物与楼层再切换</div></div>').addClass('active');
+          setTimeout(function() {
+            $obj.error.removeClass('active');
+            setTimeout(function() {
+              $obj.error.empty();
+            }, 250);
+          }, 2500)
+        } else {
+          var site_id = parseInt(t_floor[0].id);
+          indoorViewer.moveToSiteModelEntityId(site_id);
+          setPanoramaScene();
+        }
+      });
+      $('#changeView').click(function() {
+        swapScene();
+      });
+      function getMsgFromParent (event) {
+        if (event.data.flag == 'switch_to_navvis') {
+          let t_floor_id = event.data.floor;
+          let site_id = parseInt(t_floor_id);
+          indoorViewer.moveToSiteModelEntityId(site_id);
+          setPanoramaScene();
+        }
+      }
+      window.addEventListener('message', getMsgFromParent, false);
+    });
+  </script>
+</body>
+</html>

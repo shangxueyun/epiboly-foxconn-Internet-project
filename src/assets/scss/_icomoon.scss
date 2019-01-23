@@ -1,0 +1,100 @@
+﻿$icomoon-font-path: "/static/fonts" !default;
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot?mkmohe');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?mkmohe#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf?mkmohe') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?mkmohe') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?mkmohe#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-ic-circle-add:before {
+  content: "\e913";
+}
+.icomoon-ic-remove:before {
+  content: "\e90f";
+}
+.icomoon-ic-info:before {
+  content: "\e910";
+}
+.icomoon-ic-edit:before {
+  content: "\e911";
+}
+.icomoon-ic-backto:before {
+  content: "\e912";
+}
+.icomoon-ic-history-log:before {
+  content: "\e90d";
+}
+.icomoon-ic-pie-chart:before {
+  content: "\e90e";
+}
+.icomoon-ic-analysis-graph:before {
+  content: "\e90b";
+}
+.icomoon-ic-list:before {
+  content: "\e90c";
+}
+.icomoon-cloud:before {
+  content: "\e90a";
+}
+.icomoon-ic-analysis:before {
+  content: "\e902";
+}
+.icomoon-ic-data-center:before {
+  content: "\e905";
+}
+.icomoon-ic-alarm-fill:before {
+  content: "\e909";
+}
+.icomoon-ic-application:before {
+  content: "\e908";
+}
+.icomoon-ic-download:before {
+  content: "\e907";
+}
+.icomoon-ic-insight:before {
+  content: "\e906";
+}
+.icomoon-ic-trash:before {
+  content: "\e904";
+}
+.icomoon-ic-alarm:before {
+  content: "\e903";
+}
+.icomoon-ic-safety:before {
+  content: "\e901";
+}
+.icomoon-ic-home:before {
+  content: "\e900";
+}
+.icomoon-ic-expand-more:before {
+  content: "\e984";
+}
+.icomoon-ic-expand-less:before {
+  content: "\e985";
+}
+.icomoon-ic-pointer:before {
+  content: "\e986";
+}
+.icomoon-ic-menu:before {
+  content: "\e987";
+}

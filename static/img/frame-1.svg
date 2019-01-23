@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="182px" viewBox="0 0 512 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>frame-1</title>
+    <defs>
+        <linearGradient x1="44.0734863%" y1="56.478851%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#38C3FF" offset="0%"></stop>
+            <stop stop-color="#A0D4FF" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="512" height="182" rx="2"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wodget01">
+            <g id="Oval-3">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <g id="Mask">
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <rect stroke="#45BBFF" stroke-width="1" x="0.5" y="0.5" width="511" height="181" rx="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

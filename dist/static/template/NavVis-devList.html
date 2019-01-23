@@ -1,0 +1,68 @@
+<div class="table-container mCustomScrollbar custom-mCustomScrollbar" id="scrollContainer">
+  <table class="navvis-dev-list" id="devList"></table>
+</div>
+<script>
+function getPOIsInfo($target, $scrollContainer) {
+  var base_url = IV_settting.base_url,
+      tail = IV_settting.lang_prefix;
+  var poi_type_url = base_url + '/api/poi_types?' + tail,
+      pois_url = base_url + '/api/pois?' + tail;
+  $.when($.ajax({ url: poi_type_url, type: 'GET', cache: false, dataType: 'json' }),
+         $.ajax({ url: pois_url, type: 'GET', cache: false, dataType: 'json' }))
+  .done(function(doneCb1, doneCb2) {
+    var poiType_data = doneCb1[0],
+        pois_data = doneCb2[0];
+    var poiTypes = {};
+    $.each(poiType_data, function(idx, poiType) {
+      var name = poiType.name;
+      var nameStr = name.zh ? name.zh : (name.zh_tw ? name.zh_tw : name.en);
+      poiTypes[poiType.id] = { term: '<img src="' + base_url + '/' + poiType.icon + '"/>' + nameStr, pois: [] };
+    });
+    $.each(pois_data, function(idx, poi) {
+      var title = poi.titles;
+      var titleStr = title.zh ? title.zh : (title.zh_tw ? title.zh_tw : title.en);
+      poiTypes[poi.poi_type_id].pois.push({ id: poi.id, name: titleStr });
+    });
+
+    var initShowTypes = parseInt(IV_settting.init_show_types),
+        typeCategory = IV_settting.type_category;
+    var str = '';
+    Object.keys(poiTypes).map(function(poi_type_id, idx) {
+      var poiType = poiTypes[poi_type_id];
+      var pois = poiType.pois;
+      if (poi_type_id == initShowTypes || typeCategory.indexOf(poi_type_id) > -1) {
+        return true;
+      }
+      str += '<tr class="type-header" data-poi-type-id="' + poi_type_id + '"><td>' + poiType.term + '<span class="type-expand icomoon-ic-expand-less"></span></td></tr>' + 
+             '<tr class="cate-header"><td>名称</td></tr>';
+      var len = pois.length - 1;
+      for (var i = 0; i < len; i++) {
+        var poi = pois[i];
+        str += '<tr data-poi-id="' + poi.id + '"><td>' + poi.name + '</td></tr>';
+      }
+      str += '<tr data-poi-id="' + pois[len].id + '" class="last-poi"><td>' + pois[len].name + '</td></tr>' + 
+             '<tr class="blank-line"><td><hr></td></tr>';
+    });
+    $target.empty().html(str);
+    $scrollContainer.mCustomScrollbar('update');
+  });
+}
+$(document).ready(function() {
+  var $obj = {
+    scrollContainer: $('#scrollContainer'),
+    table: $('#devList')
+  };
+  $obj.scrollContainer.mCustomScrollbar({
+    axis: 'y',
+    //theme: 'dark-thin',
+    theme: 'minimal-dark',
+    scrollButtons: false
+    /*callbacks: {
+      onTotalScroll: function() {
+        $target.mCustomScrollbar('update');
+      }
+    }*/
+  });
+  getPOIsInfo($obj.table, $obj.scrollContainer);
+});
+</script>

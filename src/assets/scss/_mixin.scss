@@ -1,0 +1,76 @@
+﻿@import '_functions';
+
+@mixin all-browser-support($css, $statement, $webkit: 1, $moz: 1, $ms: 1, $self: 1, $o: 0) {
+  @if not ($webkit == 0) { -webkit-#{$css}: $statement; }
+  @if not ($moz == 0)    {    -moz-#{$css}: $statement; }
+  @if not ($ms == 0)     {     -ms-#{$css}: $statement; }
+  @if not ($o == 0)      {      -o-#{$css}: $statement; }
+  @if not ($self == 0)   {         #{$css}: $statement; }
+}
+@mixin display-flex() {
+  @include all-browser-support(display, flex, 1, 1, 0, 1);
+}
+@mixin vertical-center-block() {
+  @include display-flex();
+  @include all-browser-support(align-items, center, 1, 0, 0, 1);
+}
+@mixin center-block($block-height) {
+  height: $block-height;
+  @include vertical-center-block();
+  @include all-browser-support(justify-content, center, 1, 1, 0, 1);
+}
+@mixin background-svg($svg, $bg-size: cover, $bg-position: 50% 50%, $bg-color: null) {
+  background: $bg-color svg-url($svg) no-repeat $bg-position / $bg-size;
+
+  $pos-result: false;
+  @each $pos in $bg-position {
+    @if not (is-percentage($pos) or is-predefined-position($pos)) {
+      $pos-result: true;
+    }
+  }
+  @if $pos-result {
+    background-position: $bg-position;
+  }
+  $size-result: false;
+  @each $size in $bg-size {
+    @if not (is-percentage($size) or is-predefined-size($size)) {
+      $size-result: true;
+    }
+  }
+  @if $size-result {
+    background-size: $bg-size;
+  }
+}
+@mixin opacity($opacity) {
+  filter: alpha(opacity=$opacity * 100);
+  opacity: $opacity;
+}
+@mixin animation($statement) {
+  @include all-browser-support(animation, #{$statement}, 1, 1, 0, 1, 1);
+}
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// for fade out effect
+@include keyframes(fade-out) {
+  from { @include opacity(1) }
+  to { @include opacity(0) }
+}
+
+// for fade in effect
+@include keyframes(fade-in) {
+  from { @include opacity(0) }
+  to { @include opacity(1) }
+}

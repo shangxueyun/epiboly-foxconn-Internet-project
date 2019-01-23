@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="108px" viewBox="0 0 108 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 12</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="94.3373843%" y1="73.7528935%" x2="35.546875%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#77ACFF" offset="0%"></stop>
+            <stop stop-color="#A887FF" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="51" cy="51" r="51"></circle>
+        <filter x="-14.2%" y="-12.3%" width="128.4%" height="128.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.584313725   0 0 0 0 0.584313725   0 0 0 0 1  0 0 0 0.698935688 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard-8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-12" transform="translate(3.000000, 3.000000)">
+            <g id="Group-22">
+                <g id="Oval-9">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+            </g>
+            <g id="car" transform="translate(23.000000, 22.000000)">
+                <g id="Group-5">
+                    <path d="M23.9652778,18.0833333 L23.9652778,12.7361111 L17.5486111,12.7361111 L17.5486111,44.3154919 C17.5486111,44.5974365 17.774038,44.8194444 18.0521162,44.8194444 L23.4617727,44.8194444 C23.7369052,44.8194444 23.9652778,44.5938172 23.9652778,44.3154919 L23.9652778,28.7777778 L23.9652778,18.0833333 Z M3.11111111,4.1134968 C3.11111111,3.55989447 3.55489074,3.11111111 4.1134968,3.11111111 L53.4420588,3.11111111 C53.9956611,3.11111111 54.4444444,3.55489074 54.4444444,4.1134968 L54.4444444,53.4420588 C54.4444444,53.9956611 54.0006648,54.4444444 53.4420588,54.4444444 L4.1134968,54.4444444 C3.55989447,54.4444444 3.11111111,54.0006648 3.11111111,53.4420588 L3.11111111,4.1134968 Z M23.9652778,12.7361111 L23.9652778,34.125 C23.9652778,34.125 23.9652778,34.125 30.3819444,34.125 C36.7986111,34.125 43.2152778,31.4513889 43.2152778,23.4305556 C43.2152778,15.4097222 36.7986111,12.7361111 30.3819444,12.7361111 C23.9652778,12.7361111 23.9652778,12.7361111 23.9652778,12.7361111 Z" id="Combined-Shape-Copy-3" fill="#FFFFFF"></path>
+                    <rect id="Rectangle-18" x="0" y="0" width="56" height="56"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
